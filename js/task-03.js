@@ -12,3 +12,22 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const ref = {
+  gallery: document.querySelector('.gallery')
+}
+
+const createItemsOfGallery = array => array.map(({url, alt}) =>
+ `<li>
+  <img src="${url}" alt="${alt}" width="200px">
+</li>`).join("")
+
+
+
+
+ref.gallery.insertAdjacentHTML("afterbegin", createItemsOfGallery(images))
+ref.gallery.style.display = 'flex';
+ref.gallery.style.justifyContent = 'space-around';
+ref.gallery.style.alignItems = 'center';
+ref.gallery.style.listStyle = 'none';
+

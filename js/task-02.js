@@ -11,15 +11,15 @@ const ingredients = [
 
 const ingredientList = document.querySelector('#ingredients');
 
-const createIngredients = array => array.reduce((ary, el) => {
+const createIngredients = array => array.reduce((accum, el) => {
 
     const ingredientItem = document.createElement("li");
    
     ingredientItem.textContent = el;
     ingredientItem.classList.add('item');
-    ary.push(ingredientItem);
+    accum.push(ingredientItem);
 
-    return ary;
+    return accum;
     
   }, [])
 
