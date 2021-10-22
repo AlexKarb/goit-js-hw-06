@@ -16,25 +16,22 @@ const ref = {
 function createBoxes(amount){
   amount = ref.inputForNumberOfBox.value;
   const boxsArray = [];
-
+  let valueOfSize = 30;
+  
   for (let i = 1; i <= amount; i++){
-    const box = document.createElement("div");
-    box.style.backgroundColor = getRandomHexColor();
-    boxsArray.push(box);
-  };
+
+  const box = document.createElement("div");
   
-  
-  boxsArray.reduce((valueOfSize, box) => {
-    valueOfSize += 10;
-      
     box.style.width = String(valueOfSize) + "px";
     box.style.height = String(valueOfSize) + "px";
-   
-
-    return valueOfSize
-  }, 20);
+    box.style.backgroundColor = getRandomHexColor();
   
-
+    boxsArray.push(box);
+  
+  valueOfSize += 10;
+// ref.boxForElem.appendChild(box);
+  };
+ 
   return ref.boxForElem.append(...boxsArray);
 
 };
