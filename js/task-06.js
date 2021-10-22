@@ -4,11 +4,19 @@ const inputLengthOfSymbol = Number(inputEl.dataset.length);
 
 
 function addStyleValid() {
-    return  inputEl.classList.contains('invalid') ? inputEl.classList.replace( "invalid", "valid") : inputEl.classList.add("valid");
-}
+    if (inputEl.classList.contains('invalid')) {
+        inputEl.classList.replace( "invalid", "valid")
+    } else {
+        inputEl.classList.add("valid")
+    }
+  }
  
 function addStyleInvalid() {
-    return  inputEl.classList.contains('valid') ? inputEl.classList.replace("valid", "invalid") : inputEl.classList.add("invalid");
+    if ( inputEl.classList.contains('valid')) {
+        inputEl.classList.replace("valid", "invalid")
+    } else {
+        inputEl.classList.add("invalid")
+    }
 }
 
 
@@ -17,8 +25,12 @@ inputEl.addEventListener('blur', () => {
     
     const usersLengthOfSymbols = inputEl.value.length;
     
-    return usersLengthOfSymbols === inputLengthOfSymbol ? addStyleValid() : addStyleInvalid();
-    })
+    if (usersLengthOfSymbols === inputLengthOfSymbol) {
+        return addStyleValid();
+    }
+        return addStyleInvalid();
+}
+)
 
 
 
