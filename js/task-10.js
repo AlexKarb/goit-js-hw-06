@@ -10,13 +10,13 @@ const ref = {
   boxForElem: document.querySelector('#boxes'),
 };
 
+ let valueOfSize = 30;
 
 
 
 function createBoxes(amount){
   amount = ref.inputForNumberOfBox.value;
   const boxsArray = [];
-  let valueOfSize = 30;
   
   for (let i = 1; i <= amount; i++){
 
@@ -27,9 +27,8 @@ function createBoxes(amount){
     box.style.backgroundColor = getRandomHexColor();
   
     boxsArray.push(box);
-  
+
   valueOfSize += 10;
-// ref.boxForElem.appendChild(box);
   };
  
   return ref.boxForElem.append(...boxsArray);
@@ -38,6 +37,7 @@ function createBoxes(amount){
 
 function destroyBoxes() {
   ref.boxForElem.innerHTML = "";
+  valueOfSize = 30;
 }
  
 
