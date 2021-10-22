@@ -19,6 +19,7 @@ function createBoxes(amount){
 
   for (let i = 1; i <= amount; i++){
     const box = document.createElement("div");
+    box.style.backgroundColor = getRandomHexColor();
     boxsArray.push(box);
   };
   
@@ -28,7 +29,7 @@ function createBoxes(amount){
       
     box.style.width = String(valueOfSize) + "px";
     box.style.height = String(valueOfSize) + "px";
-    box.style.backgroundColor = getRandomHexColor();
+   
 
     return valueOfSize
   }, 20);
